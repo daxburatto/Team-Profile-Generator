@@ -117,6 +117,7 @@ const newEmployee = () => {
         } else {
             console.log(employees)
             writeFile('./dist/index.html', writeHTML(employees))
+            writeFile('./dist/style.css', css)
         }
     })
     .then(err => {
