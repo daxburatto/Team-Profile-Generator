@@ -77,7 +77,7 @@ const newEmployee = () => {
             name: 'github',
             message: "Enter Engineer's GitHub Profile Link",
             when: function ({role}) {  
-                if (role === 'Engineer') {
+                if (role === `Engineer`) {
                     return true
                 } else {
                     return false
@@ -89,7 +89,7 @@ const newEmployee = () => {
             name: 'school',
             message: "Enter Intern's School",
             when: function ({role}) {  
-                if (role === 'Intern') {
+                if (role === `Intern`) {
                     return true
                 } else {
                     return false

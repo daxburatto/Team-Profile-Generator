@@ -32,10 +32,53 @@ function writeHTML(array) {
 
 function writeEmployees(array) {  
     return array.map(object=>{
-        const {name, id, email, officeNumber, github, school} = object
+        const {name, id, email, role, officeNumber, github, school} = object
 
+        let roleTag
+        let icon
+        switch (role) {
+            case `Manager`:
+                roleTag = ``
+                icon = ``
+                break
+            case `Engineer`:
+                roleTag = ``
+                icon = ``
+                break
+            case `Intern`:
+                roleTag = ``
+                icon = ``
+                break
+        }
         return `
         <div class="employee"
-        `
+        <div class="title">
+            <h2>${name}</h2>
+            <p>${icon}${role}</p>
+        </div>
+        <div class="info">
+            <ul>
+                <li>ID: ${id}</li>
+                <li>Email: <a href="mailto:${email}" target="_blank">${email}</a></li>
+                ${roleTag}
+            </ul>
+        </div>
+        </div>
+        `  
+    }).join('')
+}
+
+function writeFile(destination, text){
+    return new Promise((resolve, reject)=>{
+        fs.writeFile(destination, text, err =>{
+            if (err) {
+                reject(err)
+                return
+            }
+            resolve({
+                ok:true,
+                message: `File '${destination.slice(7)}' Created!`
+            })
+        })
     })
 }
