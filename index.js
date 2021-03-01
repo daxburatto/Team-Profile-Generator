@@ -1,10 +1,9 @@
 const inquirer = require('inquirer')
-const Employee = require('./lib/Employee')
 const Engineer = require('./lib/Engineer')
 const Manager = require('./lib/Manager')
 const Intern = require('./lib/Intern')
 const employees = []
-const { generateHTML, writeFile, css} = require('./src/writeHTML')
+const { writeHTML, writeFile, css} = require('./src/writeHTML')
 
 const teamManager = () => {  
     return inquirer.prompt([
@@ -106,12 +105,10 @@ const newEmployee = () => {
     .then(function(data){
         switch (data.role) {
             case 'Engineer':
-                employees.push(new Engineer(data.name, data.id, data.email, data.role, data.github))
+                employees.push(new Engineer(data.name, data.id, data.email, data.github))
                 break;
             case 'Intern':
-                employees.push(new Intern(data.name, data.id, data.email, data.role, data.school))
-                break;
-            default:
+                employees.push(new Intern(data.name, data.id, data.email, data.school))
                 break;
         }
 

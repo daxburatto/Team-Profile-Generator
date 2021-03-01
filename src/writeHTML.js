@@ -38,15 +38,15 @@ function writeEmployees(array) {
         let icon
         switch (role) {
             case `Manager`:
-                roleTag = ``
+                roleTag = `<li>Office Number: ${officeNumber}</li>`
                 icon = ``
                 break
             case `Engineer`:
-                roleTag = ``
-                icon = ``
+                roleTag = `<li>Github: <a href="https://github.com/${github}" target="_blank">${github}</a></li>`
+                icon = `<i class="fas fa-wrench"></i>`
                 break
             case `Intern`:
-                roleTag = ``
+                roleTag = `<li>School: ${school}</li>`
                 icon = ``
                 break
         }
