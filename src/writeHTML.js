@@ -12,7 +12,7 @@ function writeHTML(array) {
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <title>Team Profile Generator</title>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
-        <link rel="stylesheet" href="./style.css">
+        <link rel="stylesheet" href="./dist/style.css">
     </head>
 
     <body>
@@ -23,7 +23,7 @@ function writeHTML(array) {
         </header>
 
         <main>
-            <div>
+            <div class="main">
                 ${writeEmployees(array)}
             </div>
         </main>
@@ -39,7 +39,7 @@ function writeEmployees(array) {
         let icon
         switch (role) {
             case `Manager`:
-                roleTag = `<li>Office Number: ${officeNumber}</li>`
+                roleTag = `<li>Office Number:<br> ${officeNumber}</li>`
                 icon = `<i class="fas fa-user-tie"></i>`
                 break
             case `Engineer`:
@@ -52,7 +52,7 @@ function writeEmployees(array) {
                 break
         }
         return `
-        <div class="employee"
+        <div class="employee">
             <div class="title">
                 <h2>${name}</h2>
                 <p>${icon}${role}</p>
