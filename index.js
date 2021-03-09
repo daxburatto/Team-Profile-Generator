@@ -5,6 +5,7 @@ const Intern = require('./lib/Intern')
 const employees = []
 const { writeHTML, writeFile, css} = require('./src/writeHTML')
 
+// prompt for manager's information
 const teamManager = () => {  
     return inquirer.prompt([
         {
@@ -43,12 +44,14 @@ const teamManager = () => {
             message: "Enter Managers Office Number"
         }
     ])
+    // push data to Manager.js and run newEmployee()
     .then(function (data) {  
         employees.push(new Manager(data.name, data.id, data.email, data.officeNumber))
         newEmployee()
     })
 }
 
+// prompts for Intern's and Engineer's information
 const newEmployee = () => {
     return inquirer.prompt([
         {
@@ -102,6 +105,7 @@ const newEmployee = () => {
             default: false
         }
     ])
+    // switch case to push Engineer/Intern information
     .then(function(data){
         switch (data.role) {
             case 'Engineer':
@@ -115,6 +119,7 @@ const newEmployee = () => {
         if (data.confirmAddEmployee) {
             newEmployee()
         } else {
+            // console logs info and writes html and css files located in dist/
             console.log(employees)
             writeFile('./dist/index.html', writeHTML(employees))
             writeFile('./dist/style.css', css)

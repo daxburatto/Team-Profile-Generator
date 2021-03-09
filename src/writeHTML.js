@@ -1,6 +1,7 @@
 const { objectExpression } = require('@babel/types')
 const fs = require('fs')
 
+// writes <head>, <body>, and includes array function for employee variables
 function writeHTML(array) {  
     return `
     <!DOCTYPE html>
@@ -31,37 +32,39 @@ function writeHTML(array) {
     `
 }
 
+// writes employees with switch case for manager, engineer, or intern
 function writeEmployees(array) {  
     return array.map(object=>{
         const {name, id, email, role, officeNumber, github, school} = object
 
-        let roleTag
+        // roleTag is icon for employee
+        let roleInfo
         let icon
         switch (role) {
             case `Manager`:
-                roleTag = `<li>Office Number:<br> ${officeNumber}</li>`
+                roleInfo = `<li>Office Number:<br> ${officeNumber}</li>`
                 icon = `<i class="fas fa-user-tie"></i>`
                 break
             case `Engineer`:
-                roleTag = `<li>Github: <a href="https://github.com/${github}" target="_blank">${github}</a></li>`
+                roleInfo = `<li>Github:<br> <a href="https://github.com/${github}" target="_blank">${github}</a></li>`
                 icon = `<i class="fas fa-wrench"></i>`
                 break
             case `Intern`:
-                roleTag = `<li>School: ${school}</li>`
-                icon = ``
+                roleInfo = `<li>School:<br> ${school}</li>`
+                icon = `<i class="fas fa-users"></i>`
                 break
         }
         return `
         <div class="employee">
             <div class="title">
                 <h2>${name}</h2>
-                <p>${icon}${role}</p>
+                <p>${role}${icon}</p>
             </div>
             <div class="info">
                 <ul>
                     <li>ID: ${id}</li>
                     <li>Email: <a href="mailto:${email}" target="_blank">${email}</a></li>
-                    ${roleTag}
+                    ${roleInfo}
                 </ul>
             </div>
         </div>
@@ -109,13 +112,13 @@ header {
     justify-content: center;
 }
 .employee {
-    width: 14rem;
-    box-shadow: 2px 2px 3px rgb(114, 113, 113);
+    width: 15rem;
     margin: 10px;
 }
 .employee .title{
     background-color: black;
     padding: 7px;
+    margin-bottom: 3px;
     text-align: center;
     border: 5px solid rgb(123, 69, 209);
 }
@@ -126,8 +129,9 @@ header {
     margin: 0 3px;
 }
 .employee .info ul li{
-    padding: 15px;
-    color: grey;
+    padding: 20px;
+    margin-bottom: 5px;
+    color: lightgrey;
     list-style: none;
     border: 1px solid rgb(123, 69, 209);
 }

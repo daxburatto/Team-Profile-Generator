@@ -24,12 +24,12 @@ header {
 }
 .employee {
     width: 14rem;
-    box-shadow: 2px 2px 3px rgb(114, 113, 113);
     margin: 10px;
 }
 .employee .title{
     background-color: black;
     padding: 7px;
+    margin-bottom: 3px;
     text-align: center;
     border: 5px solid rgb(123, 69, 209);
 }
@@ -41,6 +41,7 @@ header {
 }
 .employee .info ul li{
     padding: 15px;
+    margin-bottom: 5px;
     color: grey;
     list-style: none;
     border: 1px solid rgb(123, 69, 209);
