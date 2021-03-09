@@ -1,6 +1,7 @@
 # Team Profile Generator
 
 By daxburatto
+
 [github](https://github.com/daxburatto)
 
 ![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
@@ -28,7 +29,6 @@ Enter node index into terminal and then input info to generate a profile
 ## Credits
 
 Email: daxburatto@gmail.com
-Contributers: none
 
 ## License
 
@@ -36,5 +36,6 @@ Contributers: none
 
 ## Tests
 
-[Video deminstration of tests and usage](https://drive.google.com/file/d/1P0Ltn2hez8Fh7QlQB0sEZTWDA5I43PWk/view)
+[Video deminstration of tests and usage](https://drive.google.com/file/d/1P0Ltn2hez8Fh7QlQB0sEZTWDA5I43PWk/view).
+
 To run the tests yourself type npm run test in the console.
