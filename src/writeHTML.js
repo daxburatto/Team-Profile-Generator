@@ -63,7 +63,7 @@ function writeEmployees(array) {
             <div class="info">
                 <ul>
                     <li>ID: ${id}</li>
-                    <li>Email: <a href="mailto:${email}" target="_blank">${email}</a></li>
+                    <li>Email:<br> <a href="mailto:${email}" target="_blank">${email}</a></li>
                     ${roleInfo}
                 </ul>
             </div>

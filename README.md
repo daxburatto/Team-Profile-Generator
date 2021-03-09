@@ -1,6 +1,7 @@
 # Team Profile Generator
 
 By daxburatto
+[github](https://github.com/daxburatto)
 
 ![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
 
@@ -14,6 +15,7 @@ Team Profile Generator allows you to enter some information about yourself and c
 * [Usage](#usage)
 * [Credits](#credits)
 * [License](#license)
+* [Tests](#tests)
 
 ## Installation
 
@@ -31,3 +33,8 @@ Contributers: none
 ## License
 
 [MIT](https://choosealicense.com/licenses/mit/)
+
+## Tests
+
+[Video deminstration of tests and usage](https://drive.google.com/file/d/1P0Ltn2hez8Fh7QlQB0sEZTWDA5I43PWk/view)
+To run the tests yourself type npm run test in the console.
