@@ -121,12 +121,10 @@ const newEmployee = () => {
         } else {
             // console logs info and writes html and css files located in dist/
             console.log(employees)
+            console.log('Portfolio created! Check the dist/ folder')
             writeFile('./dist/index.html', writeHTML(employees))
             writeFile('./dist/style.css', css)
         }
-    })
-    .then(err => {
-        console.log(err)
     })
 }
 
